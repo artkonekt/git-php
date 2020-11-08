@@ -1,16 +1,16 @@
-[![Version](http://img.shields.io/packagist/v/bit3/git-php.svg?style=flat-square)](https://packagist.org/packages/bit3/git-php)
-[![Stable Build Status](http://img.shields.io/travis/bit3/git-php/master.svg?style=flat-square&label=stable build)](https://travis-ci.org/bit3/git-php)
-[![Upstream Build Status](http://img.shields.io/travis/bit3/git-php/develop.svg?style=flat-square&label=dev build)](https://travis-ci.org/bit3/git-php)
-[![License](http://img.shields.io/packagist/l/bit3/git-php.svg?style=flat-square)](https://github.com/bit3/git-php/blob/master/LICENSE)
-[![Downloads](http://img.shields.io/packagist/dt/bit3/git-php.svg?style=flat-square)](https://packagist.org/packages/bit3/git-php)
+# Run Git Commands from PHP
 
-Easy to use GIT wrapper for php
-===============================
+[![Travis Build Status](https://img.shields.io/travis/artkonekt/git-php.svg?style=flat-square)](https://travis-ci.com/artkonekt/git-php)
+[![Packagist Stable Version](https://img.shields.io/packagist/v/konekt/git-php.svg?style=flat-square&label=stable)](https://packagist.org/packages/konekt/git-php)
+[![Packagist downloads](https://img.shields.io/packagist/dt/konekt/git-php.svg?style=flat-square)](https://packagist.org/packages/konekt/git-php)
+[![StyleCI](https://styleci.io/repos/311014751/shield?branch=master)](https://styleci.io/repos/311014751)
+[![MIT Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.md)
+
+## GIT Wrapper for PHP
 
 This is a lightweight wrapper, providing the git commands in PHP.
 
-Usage examples
---------------
+### Examples
 
 The API use command builders, that allow you to build a command and execute it one time.
 
@@ -29,7 +29,7 @@ or option, just look into the git documentation. You will find the command/optio
 #### init a new git repository
 
 ```php
-use Bit3\GitPhp\GitRepository;
+use Konekt\GitPhp\GitRepository;
 
 $directory = '/path/to/git/target/directory';
 
@@ -42,7 +42,7 @@ $git->init()->execute();
 The `clone` command is named `cloneRepository()` because `clone` is a reserved word in PHP.
 
 ```php
-use Bit3\GitPhp\GitRepository;
+use Konekt\GitPhp\GitRepository;
 
 $directory = '/path/to/git/target/directory';
 
