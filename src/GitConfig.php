@@ -20,7 +20,7 @@
  * @filesource
  */
 
-namespace Bit3\GitPhp;
+namespace Konekt\GitPhp;
 
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;

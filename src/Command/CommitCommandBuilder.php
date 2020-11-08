@@ -20,7 +20,7 @@
  * @filesource
  */
 
-namespace Bit3\GitPhp\Command;
+namespace Konekt\GitPhp\Command;
 
 /**
  * Commit command builder.

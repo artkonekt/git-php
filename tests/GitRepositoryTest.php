@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of bit3/git-php.
+ * This file is part of konekt/git-php and is a fork of the bit3/git-php project
  *
  * (c) Tristan Lins <tristan@lins.io>
  *
@@ -15,15 +15,16 @@
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Matthew Gamble <git@matthewgamble.net>
  * @author     Sven Baumann <baumann.sv@gmail.com>
+ * @author     Attila Fulop <https://github.com/fulopattila122>
  * @copyright  2014-2018 Tristan Lins <tristan@lins.io>
- * @license    https://github.com/bit3/git-php/blob/master/LICENSE MIT
- * @link       https://github.com/bit3/git-php
+ * @license    https://github.com/artkonekt/git-php/blob/master/LICENSE MIT
+ * @link       https://github.com/artkonekt/git-php
  * @filesource
  */
 
-namespace Bit3\GitPhp\Test;
+namespace Konekt\GitPhp\Test;
 
-use Bit3\GitPhp\GitRepository;
+use Konekt\GitPhp\GitRepository;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
@@ -84,7 +85,7 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::getRepositoryPath
+     * @covers \Konekt\GitPhp\GitRepository::getRepositoryPath
      */
     public function testGetRepositoryPath()
     {
@@ -99,7 +100,7 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::isInitialized
+     * @covers \Konekt\GitPhp\GitRepository::isInitialized
      */
     public function testIsInitialized()
     {
@@ -112,8 +113,8 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::init
-     * @covers \Bit3\GitPhp\Command\InitCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::init
+     * @covers \Konekt\GitPhp\Command\InitCommandBuilder::execute
      */
     public function testInit()
     {
@@ -125,9 +126,9 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::config
-     * @covers \Bit3\GitPhp\Command\ConfigCommandBuilder::execute
-     * @covers \Bit3\GitPhp\Command\ConfigCommandBuilder::get
+     * @covers \Konekt\GitPhp\GitRepository::config
+     * @covers \Konekt\GitPhp\Command\ConfigCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Command\ConfigCommandBuilder::get
      */
     public function testConfigGetOnInitializedRepository()
     {
@@ -142,15 +143,15 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::config
-     * @covers \Bit3\GitPhp\Command\ConfigCommandBuilder
+     * @covers \Konekt\GitPhp\GitRepository::config
+     * @covers \Konekt\GitPhp\Command\ConfigCommandBuilder
      */
     public function testConfigGetOnUnitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->config()->file('local')->execute('core.bare');
@@ -215,8 +216,8 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::remote
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::getNames
+     * @covers \Konekt\GitPhp\GitRepository::remote
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::getNames
      */
     public function testListRemotesOnInitializedRepository()
     {
@@ -227,24 +228,24 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::remote
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::getNames
+     * @covers \Konekt\GitPhp\GitRepository::remote
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::getNames
      */
     public function testListRemotesOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->remote()->getNames();
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::branch
-     * @covers \Bit3\GitPhp\Command\BranchCommandBuilder::all
-     * @covers \Bit3\GitPhp\Command\BranchCommandBuilder::getNames
+     * @covers \Konekt\GitPhp\GitRepository::branch
+     * @covers \Konekt\GitPhp\Command\BranchCommandBuilder::all
+     * @covers \Konekt\GitPhp\Command\BranchCommandBuilder::getNames
      */
     public function testListBranchesOnInitializedRepository()
     {
@@ -259,25 +260,25 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::branch
-     * @covers \Bit3\GitPhp\Command\BranchCommandBuilder::getNames
+     * @covers \Konekt\GitPhp\GitRepository::branch
+     * @covers \Konekt\GitPhp\Command\BranchCommandBuilder::getNames
      */
     public function testListBranchesOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->branch()->getNames();
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::describe
-     * @covers \Bit3\GitPhp\Command\DescribeCommandBuilder::tags
-     * @covers \Bit3\GitPhp\Command\DescribeCommandBuilder::all
-     * @covers \Bit3\GitPhp\Command\DescribeCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::describe
+     * @covers \Konekt\GitPhp\Command\DescribeCommandBuilder::tags
+     * @covers \Konekt\GitPhp\Command\DescribeCommandBuilder::all
+     * @covers \Konekt\GitPhp\Command\DescribeCommandBuilder::execute
      */
     public function testDescribeOnInitializedRepository()
     {
@@ -296,24 +297,24 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::describe
-     * @covers \Bit3\GitPhp\Command\DescribeCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::describe
+     * @covers \Konekt\GitPhp\Command\DescribeCommandBuilder::execute
      */
     public function testDescribeOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->describe()->execute();
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::remote
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::setUrl
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::remote
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::setUrl
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
      */
     public function testRemoteSetUrlOnInitializedRepository()
     {
@@ -329,25 +330,25 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::remote
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::setUrl
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::remote
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::setUrl
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
      */
     public function testRemoteSetUrlOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->remote()->setUrl('local', $this->initializedRepositoryPath)->execute();
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::remote
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::setPushUrl
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::remote
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::setPushUrl
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
      */
     public function testRemoteSetPushUrlOnInitializedRepository()
     {
@@ -371,25 +372,25 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::remote
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::setPushUrl
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::remote
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::setPushUrl
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
      */
     public function testRemoteSetPushUrlOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->remote()->setPushUrl('local', $this->initializedRepositoryPath)->execute();
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::remote
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::add
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::remote
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::add
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
      */
     public function testRemoteAddOnInitializedRepository()
     {
@@ -405,24 +406,24 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::remote
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::add
-     * @covers \Bit3\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::remote
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::add
+     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
      */
     public function testRemoteAddOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->remote()->add('origin', $this->initializedRepositoryPath)->execute();
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::fetch
-     * @covers \Bit3\GitPhp\Command\FetchCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::fetch
+     * @covers \Konekt\GitPhp\Command\FetchCommandBuilder::execute
      */
     public function testRemoteFetchOnInitializedRepository()
     {
@@ -447,23 +448,23 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::fetch
-     * @covers \Bit3\GitPhp\Command\FetchCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::fetch
+     * @covers \Konekt\GitPhp\Command\FetchCommandBuilder::execute
      */
     public function testRemoteFetchOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->fetch()->execute();
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::checkout
-     * @covers \Bit3\GitPhp\Command\CheckoutCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::checkout
+     * @covers \Konekt\GitPhp\Command\CheckoutCommandBuilder::execute
      */
     public function testCheckoutOnInitializedRepository()
     {
@@ -485,15 +486,15 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::checkout
-     * @covers \Bit3\GitPhp\Command\CheckoutCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::checkout
+     * @covers \Konekt\GitPhp\Command\CheckoutCommandBuilder::execute
      */
     public function testCheckoutOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->checkout()->execute('foo');
@@ -505,23 +506,23 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::push
-     * @covers \Bit3\GitPhp\Command\PushCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::push
+     * @covers \Konekt\GitPhp\Command\PushCommandBuilder::execute
      */
     public function testPushOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->push()->execute('foo');
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::status
-     * @covers \Bit3\GitPhp\Command\StatusCommandBuilder::getStatus
+     * @covers \Konekt\GitPhp\GitRepository::status
+     * @covers \Konekt\GitPhp\Command\StatusCommandBuilder::getStatus
      */
     public function testStatusOnInitializedRepository()
     {
@@ -537,23 +538,23 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::status
-     * @covers \Bit3\GitPhp\Command\StatusCommandBuilder::getStatus
+     * @covers \Konekt\GitPhp\GitRepository::status
+     * @covers \Konekt\GitPhp\Command\StatusCommandBuilder::getStatus
      */
     public function testStatusOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->status()->getStatus();
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::add
-     * @covers \Bit3\GitPhp\Command\AddCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::add
+     * @covers \Konekt\GitPhp\Command\AddCommandBuilder::execute
      */
     public function testAddOnInitializedRepository()
     {
@@ -571,23 +572,23 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::add
-     * @covers \Bit3\GitPhp\Command\AddCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::add
+     * @covers \Konekt\GitPhp\Command\AddCommandBuilder::execute
      */
     public function testAddOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->add()->execute('unknown-file.txt');
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::rm
-     * @covers \Bit3\GitPhp\Command\RmCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::rm
+     * @covers \Konekt\GitPhp\Command\RmCommandBuilder::execute
      */
     public function testRmOnInitializedRepository()
     {
@@ -605,24 +606,24 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::rm
-     * @covers \Bit3\GitPhp\Command\RmCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::rm
+     * @covers \Konekt\GitPhp\Command\RmCommandBuilder::execute
      */
     public function testRmOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->rm()->execute('existing-file.txt');
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::commit
-     * @covers \Bit3\GitPhp\Command\CommitCommandBuilder::message
-     * @covers \Bit3\GitPhp\Command\CommitCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::commit
+     * @covers \Konekt\GitPhp\Command\CommitCommandBuilder::message
+     * @covers \Konekt\GitPhp\Command\CommitCommandBuilder::execute
      */
     public function testCommitOnInitializedRepository()
     {
@@ -646,24 +647,24 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::commit
-     * @covers \Bit3\GitPhp\Command\CommitCommandBuilder::message
-     * @covers \Bit3\GitPhp\Command\CommitCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::commit
+     * @covers \Konekt\GitPhp\Command\CommitCommandBuilder::message
+     * @covers \Konekt\GitPhp\Command\CommitCommandBuilder::execute
      */
     public function testCommitOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->commit()->message('Commit changes')->execute();
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::tag
-     * @covers \Bit3\GitPhp\Command\TagCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::tag
+     * @covers \Konekt\GitPhp\Command\TagCommandBuilder::execute
      */
     public function testTagOnInitializedRepository()
     {
@@ -682,15 +683,15 @@ class GitRepositoryTest extends TestCase
     }
 
     /**
-     * @covers \Bit3\GitPhp\GitRepository::tag
-     * @covers \Bit3\GitPhp\Command\TagCommandBuilder::execute
+     * @covers \Konekt\GitPhp\GitRepository::tag
+     * @covers \Konekt\GitPhp\Command\TagCommandBuilder::execute
      */
     public function testTagOnUninitializedRepository()
     {
         if (\method_exists($this, 'setExpectedException')) {
-            $this->setExpectedException('Bit3\GitPhp\GitException');
+            $this->setExpectedException('Konekt\GitPhp\GitException');
         } else {
-            $this->expectException('Bit3\GitPhp\GitException');
+            $this->expectException('Konekt\GitPhp\GitException');
         }
 
         $this->uninitializedGitRepository->tag()->execute('unit-test');

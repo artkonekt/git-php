@@ -1,5 +1,5 @@
 {
-    "name": "bit3/git-php",
+    "name": "konekt/git-php",
     "description": "Easy to use GIT wrapper for PHP.",
     "license": "MIT",
     "require": {
@@ -13,8 +13,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Bit3\\GitPhp\\": "src",
-            "Bit3\\GitPhp\\Test\\": "tests"
+            "Konekt\\GitPhp\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Konekt\\GitPhp\\Test\\": "tests/"
         }
     },
     "extra": {

@@ -20,7 +20,7 @@
  * @filesource
  */
 
-namespace Bit3\GitPhp;
+namespace Konekt\GitPhp;
 
 use Symfony\Component\Process\Process;
 

@@ -21,7 +21,7 @@
  * @filesource
  */
 
-namespace Bit3\GitPhp\Command;
+namespace Konekt\GitPhp\Command;
 
 /**
  * Rev-parse command builder.

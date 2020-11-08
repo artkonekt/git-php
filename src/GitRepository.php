@@ -24,31 +24,31 @@
  * @filesource
  */
 
-namespace Bit3\GitPhp;
+namespace Konekt\GitPhp;
 
-use Bit3\GitPhp\Command\AddCommandBuilder;
-use Bit3\GitPhp\Command\BranchCommandBuilder;
-use Bit3\GitPhp\Command\CheckoutCommandBuilder;
-use Bit3\GitPhp\Command\ConfigCommandBuilder;
-use Bit3\GitPhp\Command\MergeCommandBuilder;
-use Bit3\GitPhp\Command\CloneCommandBuilder;
-use Bit3\GitPhp\Command\CommitCommandBuilder;
-use Bit3\GitPhp\Command\DescribeCommandBuilder;
-use Bit3\GitPhp\Command\FetchCommandBuilder;
-use Bit3\GitPhp\Command\InitCommandBuilder;
-use Bit3\GitPhp\Command\LogCommandBuilder;
-use Bit3\GitPhp\Command\LsRemoteCommandBuilder;
-use Bit3\GitPhp\Command\PushCommandBuilder;
-use Bit3\GitPhp\Command\RemoteCommandBuilder;
-use Bit3\GitPhp\Command\ResetCommandBuilder;
-use Bit3\GitPhp\Command\RevParseCommandBuilder;
-use Bit3\GitPhp\Command\RmCommandBuilder;
-use Bit3\GitPhp\Command\ShortLogCommandBuilder;
-use Bit3\GitPhp\Command\ShowCommandBuilder;
-use Bit3\GitPhp\Command\StatusCommandBuilder;
-use Bit3\GitPhp\Command\TagCommandBuilder;
-use Bit3\GitPhp\Command\PullCommandBuilder;
-use Bit3\GitPhp\Command\StashCommandBuilder;
+use Konekt\GitPhp\Command\AddCommandBuilder;
+use Konekt\GitPhp\Command\BranchCommandBuilder;
+use Konekt\GitPhp\Command\CheckoutCommandBuilder;
+use Konekt\GitPhp\Command\ConfigCommandBuilder;
+use Konekt\GitPhp\Command\MergeCommandBuilder;
+use Konekt\GitPhp\Command\CloneCommandBuilder;
+use Konekt\GitPhp\Command\CommitCommandBuilder;
+use Konekt\GitPhp\Command\DescribeCommandBuilder;
+use Konekt\GitPhp\Command\FetchCommandBuilder;
+use Konekt\GitPhp\Command\InitCommandBuilder;
+use Konekt\GitPhp\Command\LogCommandBuilder;
+use Konekt\GitPhp\Command\LsRemoteCommandBuilder;
+use Konekt\GitPhp\Command\PushCommandBuilder;
+use Konekt\GitPhp\Command\RemoteCommandBuilder;
+use Konekt\GitPhp\Command\ResetCommandBuilder;
+use Konekt\GitPhp\Command\RevParseCommandBuilder;
+use Konekt\GitPhp\Command\RmCommandBuilder;
+use Konekt\GitPhp\Command\ShortLogCommandBuilder;
+use Konekt\GitPhp\Command\ShowCommandBuilder;
+use Konekt\GitPhp\Command\StatusCommandBuilder;
+use Konekt\GitPhp\Command\TagCommandBuilder;
+use Konekt\GitPhp\Command\PullCommandBuilder;
+use Konekt\GitPhp\Command\StashCommandBuilder;
 
 /**
  * GIT repository adapter.

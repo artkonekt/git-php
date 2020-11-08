@@ -20,10 +20,10 @@
  * @filesource
  */
 
-namespace Bit3\GitPhp\Command;
+namespace Konekt\GitPhp\Command;
 
-use Bit3\GitPhp\GitException;
-use Bit3\GitPhp\GitRepository;
+use Konekt\GitPhp\GitException;
+use Konekt\GitPhp\GitRepository;
 use Symfony\Component\Process\Exception\LogicException;
 use Symfony\Component\Process\Process;
 
