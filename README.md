@@ -5,7 +5,6 @@
 [![Downloads](http://img.shields.io/packagist/dt/bit3/git-php.svg?style=flat-square)](https://packagist.org/packages/bit3/git-php)
 
 Easy to use GIT wrapper for php
-
 ===============================
 
 This is a lightweight wrapper, providing the git commands in PHP.

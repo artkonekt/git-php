@@ -126,8 +126,6 @@ trait CommandBuilderTrait
 
         $process = new Process($this->arguments, $this->workingDirectory);
 
-        $process->setCommandLine($process->getCommandLine());
-
         return $process;
     }
 

@@ -15,3 +15,6 @@
 /vendor/
 /composer.phar
 /composer.lock
+
+# others
+.phpunit.result.cache

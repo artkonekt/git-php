@@ -1,18 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         bootstrap="tests/bootstrap.php"
-         colors="true"
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit colors="true"
+         bootstrap="./vendor/autoload.php"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
-         processIsolation="false"
-         reportUselessTests="true"
-         strictCoverage="true"
-         disallowTestOutput="true">
+         processIsolation="false">
     <testsuites>
-        <testsuite name="GitPhp test suite">
-            <directory>./tests/</directory>
+        <testsuite name="GitPhp Test Suite">
+            <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>
