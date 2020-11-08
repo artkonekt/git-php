@@ -137,7 +137,6 @@ class StashCommandBuilder implements CommandBuilderInterface
         return $this->run();
     }
 
-
     /**
      * Creates and checks out a new branch named $branchname starting from the commit at
      * which the $stash was originally created,
@@ -159,7 +158,6 @@ class StashCommandBuilder implements CommandBuilderInterface
         return $this->run();
     }
 
-
     /**
      * Remove all the stashed states.
      *
@@ -170,7 +168,6 @@ class StashCommandBuilder implements CommandBuilderInterface
         $this->arguments[] = 'clear';
         return $this->run();
     }
-
 
     /**
      * Save your local modifications to a new stash,
@@ -224,7 +221,7 @@ class StashCommandBuilder implements CommandBuilderInterface
     {
         $this->arguments[] = 'store';
         if ($message) {
-            $this->arguments[] = '--message '.$message;
+            $this->arguments[] = '--message ' . $message;
         }
         if ($commit) {
             $this->arguments[] = $commit;

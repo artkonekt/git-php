@@ -32,9 +32,9 @@ class RevParseCommandBuilder implements CommandBuilderInterface
 {
     use CommandBuilderTrait;
 
-    const ABBREV_REF_STRICT = 'strict';
+    public const ABBREV_REF_STRICT = 'strict';
 
-    const ABBREV_REF_LOOSE = 'loose';
+    public const ABBREV_REF_LOOSE = 'loose';
 
     /**
      * {@inheritDoc}

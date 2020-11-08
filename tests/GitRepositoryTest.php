@@ -176,7 +176,8 @@ class GitRepositoryTest extends TestCase
         $this->initializedGitRepository->config()->file('local')->add('user.name', 'CCA unittest 2')->execute();
 
         $process = new Process(
-            ['git', 'config', '--local', '--get-all', 'user.name'], $this->initializedRepositoryPath
+            ['git', 'config', '--local', '--get-all', 'user.name'],
+            $this->initializedRepositoryPath
         );
         $process->run();
 
@@ -428,7 +429,8 @@ class GitRepositoryTest extends TestCase
     public function testRemoteFetchOnInitializedRepository()
     {
         $process = new Process(
-            ['git', 'remote', 'add', 'origin', $this->initializedRepositoryPath], $this->initializedRepositoryPath
+            ['git', 'remote', 'add', 'origin', $this->initializedRepositoryPath],
+            $this->initializedRepositoryPath
         );
         $process->run();
 
@@ -469,7 +471,8 @@ class GitRepositoryTest extends TestCase
     public function testCheckoutOnInitializedRepository()
     {
         $process = new Process(
-            ['git', 'remote', 'add', 'origin', $this->initializedRepositoryPath], $this->initializedRepositoryPath
+            ['git', 'remote', 'add', 'origin', $this->initializedRepositoryPath],
+            $this->initializedRepositoryPath
         );
 
         $process->run();

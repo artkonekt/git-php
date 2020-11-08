@@ -34,29 +34,29 @@ class LogCommandBuilder implements CommandBuilderInterface
 {
     use CommandBuilderTrait;
 
-    const DECORATE_SHORT = 'short';
+    public const DECORATE_SHORT = 'short';
 
-    const DECORATE_FULL = 'full';
+    public const DECORATE_FULL = 'full';
 
-    const DECORATE_NO = 'no';
+    public const DECORATE_NO = 'no';
 
-    const WALK_SORTED = 'sorted';
+    public const WALK_SORTED = 'sorted';
 
-    const WALK_UNSORTED = 'unsorted';
+    public const WALK_UNSORTED = 'unsorted';
 
-    const DATE_RELATIVE = 'relative';
+    public const DATE_RELATIVE = 'relative';
 
-    const DATE_LOCAL = 'local';
+    public const DATE_LOCAL = 'local';
 
-    const DATE_DEFAULT = 'default';
+    public const DATE_DEFAULT = 'default';
 
-    const DATE_ISO = 'iso';
+    public const DATE_ISO = 'iso';
 
-    const DATE_RFC = 'rfc';
+    public const DATE_RFC = 'rfc';
 
-    const DATE_SHORT = 'short';
+    public const DATE_SHORT = 'short';
 
-    const DATE_RAW = 'raw';
+    public const DATE_RAW = 'raw';
 
     /**
      * {@inheritDoc}

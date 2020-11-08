@@ -31,11 +31,11 @@ class FetchCommandBuilder implements CommandBuilderInterface
 {
     use CommandBuilderTrait;
 
-    const RECURSE_SUBMODULES_YES = 'yes';
+    public const RECURSE_SUBMODULES_YES = 'yes';
 
-    const RECURSE_SUBMODULES_ON_DEMAND = 'on-demand';
+    public const RECURSE_SUBMODULES_ON_DEMAND = 'on-demand';
 
-    const RECURSE_SUBMODULES_NO = 'no';
+    public const RECURSE_SUBMODULES_NO = 'no';
 
     /**
      * {@inheritDoc}

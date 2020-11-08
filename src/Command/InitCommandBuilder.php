@@ -29,19 +29,19 @@ class InitCommandBuilder implements CommandBuilderInterface
 {
     use CommandBuilderTrait;
 
-    const SHARE_FALSE = 'false';
+    public const SHARE_FALSE = 'false';
 
-    const SHARE_TRUE = 'true';
+    public const SHARE_TRUE = 'true';
 
-    const SHARE_UMASK = 'umask';
+    public const SHARE_UMASK = 'umask';
 
-    const SHARE_GROUP = 'group';
+    public const SHARE_GROUP = 'group';
 
-    const SHARE_ALL = 'all';
+    public const SHARE_ALL = 'all';
 
-    const SHARE_WORLD = 'world';
+    public const SHARE_WORLD = 'world';
 
-    const SHARE_EVERYBODY = 'everybody';
+    public const SHARE_EVERYBODY = 'everybody';
 
     /**
      * {@inheritDoc}

@@ -31,11 +31,11 @@ class TagCommandBuilder implements CommandBuilderInterface
 {
     use CommandBuilderTrait;
 
-    const CLEANUP_VERBATIM = 'verbatim';
+    public const CLEANUP_VERBATIM = 'verbatim';
 
-    const CLEANUP_WHITESPACE = 'whitespace';
+    public const CLEANUP_WHITESPACE = 'whitespace';
 
-    const CLEANUP_STRIP = 'strip';
+    public const CLEANUP_STRIP = 'strip';
 
     /**
      * Flag if signing shall be done.

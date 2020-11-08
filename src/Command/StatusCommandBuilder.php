@@ -31,19 +31,19 @@ class StatusCommandBuilder implements CommandBuilderInterface
 {
     use CommandBuilderTrait;
 
-    const UNTRACKED_FILES_NO = 'no';
+    public const UNTRACKED_FILES_NO = 'no';
 
-    const UNTRACKED_FILES_NORMAL = 'normal';
+    public const UNTRACKED_FILES_NORMAL = 'normal';
 
-    const UNTRACKED_FILES_ALL = 'all';
+    public const UNTRACKED_FILES_ALL = 'all';
 
-    const IGNORE_SUBMODULES_NONE = 'none';
+    public const IGNORE_SUBMODULES_NONE = 'none';
 
-    const IGNORE_SUBMODULES_UNTRACKED = 'untracked';
+    public const IGNORE_SUBMODULES_UNTRACKED = 'untracked';
 
-    const IGNORE_SUBMODULES_DIRTY = 'dirty';
+    public const IGNORE_SUBMODULES_DIRTY = 'dirty';
 
-    const IGNORE_SUBMODULES_ALL = 'all';
+    public const IGNORE_SUBMODULES_ALL = 'all';
 
     /**
      * {@inheritDoc}

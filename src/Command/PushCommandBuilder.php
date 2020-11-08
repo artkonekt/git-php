@@ -31,9 +31,9 @@ class PushCommandBuilder implements CommandBuilderInterface
 {
     use CommandBuilderTrait;
 
-    const RECURSE_SUBMODULES_CHECK = 'check';
+    public const RECURSE_SUBMODULES_CHECK = 'check';
 
-    const RECURSE_SUBMODULES_ON_DEMAND = 'on-demand';
+    public const RECURSE_SUBMODULES_ON_DEMAND = 'on-demand';
 
     /**
      * {@inheritDoc}

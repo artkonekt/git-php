@@ -31,11 +31,11 @@ class BranchCommandBuilder implements CommandBuilderInterface
 {
     use CommandBuilderTrait;
 
-    const WHEN_ALWAYS = 'always';
+    public const WHEN_ALWAYS = 'always';
 
-    const WHEN_NEVER = 'never';
+    public const WHEN_NEVER = 'never';
 
-    const WHEN_AUTO = 'auto';
+    public const WHEN_AUTO = 'auto';
 
     /**
      * {@inheritDoc}
