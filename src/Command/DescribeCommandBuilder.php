@@ -22,6 +22,8 @@
 
 namespace Konekt\GitPhp\Command;
 
+use Konekt\GitPhp\Concerns\BuildsCommand;
+
 /**
  * Describe command builder.
  *
@@ -29,7 +31,7 @@ namespace Konekt\GitPhp\Command;
  */
 class DescribeCommandBuilder implements CommandBuilderInterface
 {
-    use CommandBuilderTrait;
+    use BuildsCommand;
 
     /**
      * {@inheritDoc}

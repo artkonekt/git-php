@@ -22,6 +22,8 @@
 
 namespace Konekt\GitPhp\Command;
 
+use Konekt\GitPhp\Concerns\BuildsCommand;
+
 /**
  * Pull command builder.
  *
@@ -29,7 +31,7 @@ namespace Konekt\GitPhp\Command;
  */
 class PullCommandBuilder implements CommandBuilderInterface
 {
-    use CommandBuilderTrait;
+    use BuildsCommand;
 
     /**
      * {@inheritDoc}

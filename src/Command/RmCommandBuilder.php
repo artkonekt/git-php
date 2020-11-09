@@ -22,12 +22,14 @@
 
 namespace Konekt\GitPhp\Command;
 
+use Konekt\GitPhp\Concerns\BuildsCommand;
+
 /**
  * Rm command builder.
  */
 class RmCommandBuilder implements CommandBuilderInterface
 {
-    use CommandBuilderTrait;
+    use BuildsCommand;
 
     /**
      * {@inheritDoc}

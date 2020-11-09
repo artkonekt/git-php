@@ -22,12 +22,14 @@
 
 namespace Konekt\GitPhp\Command;
 
+use Konekt\GitPhp\Concerns\BuildsCommand;
+
 /**
  * ShortLog command builder.
  */
 class ShortLogCommandBuilder implements CommandBuilderInterface
 {
-    use CommandBuilderTrait;
+    use BuildsCommand;
 
     /**
      * {@inheritDoc}

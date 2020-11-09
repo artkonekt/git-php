@@ -22,6 +22,8 @@
 
 namespace Konekt\GitPhp\Command;
 
+use Konekt\GitPhp\Concerns\BuildsCommand;
+
 /**
  * Tag command builder.
  *
@@ -29,7 +31,7 @@ namespace Konekt\GitPhp\Command;
  */
 class TagCommandBuilder implements CommandBuilderInterface
 {
-    use CommandBuilderTrait;
+    use BuildsCommand;
 
     public const CLEANUP_VERBATIM = 'verbatim';
 

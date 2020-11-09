@@ -22,6 +22,8 @@
 
 namespace Konekt\GitPhp\Command;
 
+use Konekt\GitPhp\Concerns\BuildsCommand;
+
 /**
  * Fetch command builder.
  *
@@ -29,7 +31,7 @@ namespace Konekt\GitPhp\Command;
  */
 class FetchCommandBuilder implements CommandBuilderInterface
 {
-    use CommandBuilderTrait;
+    use BuildsCommand;
 
     public const RECURSE_SUBMODULES_YES = 'yes';
 

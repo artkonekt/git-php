@@ -23,6 +23,8 @@
 
 namespace Konekt\GitPhp\Command;
 
+use Konekt\GitPhp\Concerns\BuildsCommand;
+
 /**
  * Rev-parse command builder.
  *
@@ -30,7 +32,7 @@ namespace Konekt\GitPhp\Command;
  */
 class RevParseCommandBuilder implements CommandBuilderInterface
 {
-    use CommandBuilderTrait;
+    use BuildsCommand;
 
     public const ABBREV_REF_STRICT = 'strict';
 

@@ -20,19 +20,14 @@
  * @filesource
  */
 
-namespace Konekt\GitPhp\Command;
+namespace Konekt\GitPhp\Concerns;
 
 use Konekt\GitPhp\GitException;
 use Konekt\GitPhp\GitRepository;
 use Symfony\Component\Process\Exception\LogicException;
 use Symfony\Component\Process\Process;
 
-/**
- * Abstract command builder.
- *
- * @SuppressWarnings(PHPMD.NumberOfChildren)
- */
-trait CommandBuilderTrait
+trait BuildsCommand
 {
     /**
      * The path to the git repository.

@@ -22,6 +22,8 @@
 
 namespace Konekt\GitPhp\Command;
 
+use Konekt\GitPhp\Concerns\BuildsCommand;
+
 /**
  * Log command builder.
  *
@@ -32,7 +34,7 @@ namespace Konekt\GitPhp\Command;
  */
 class LogCommandBuilder implements CommandBuilderInterface
 {
-    use CommandBuilderTrait;
+    use BuildsCommand;
 
     public const DECORATE_SHORT = 'short';
 
