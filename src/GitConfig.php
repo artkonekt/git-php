@@ -1,23 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * This file is part of bit3/git-php.
+ * Contains the Shareable configuration for git repositories class
  *
- * (c) Tristan Lins <tristan@lins.io>
+ * @copyright   Copyright (c) 2014-2020 Tristan Lins
+ * @author      Tristan Lins
+ * @author      Christian Schiffler
+ * @author      Sven Baumann
+ * @author      Attila Fulop
+ * @license     MIT
+ * @since       2014-03-16
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- *
- * This project is provided in good faith and hope to be usable by anyone.
- *
- * @package    bit3/git-php
- * @author     Tristan Lins <tristan@lins.io>
- * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
- * @author     Sven Baumann <baumann.sv@gmail.com>
- * @copyright  2014-2018 Tristan Lins <tristan@lins.io>
- * @license    https://github.com/bit3/git-php/blob/master/LICENSE MIT
- * @link       https://github.com/bit3/git-php
- * @filesource
  */
 
 namespace Konekt\GitPhp;
@@ -25,177 +20,98 @@ namespace Konekt\GitPhp;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 
-/**
- * Shareable configuration for git repositories.
- */
-class GitConfig
+final class GitConfig
 {
-    /**
-     * The path to the git executable.
-     *
-     * @var string
-     */
-    protected $gitExecutablePath = 'git';
+    /** The path to the git executable. */
+    private string $gitExecutablePath = 'git';
 
-    /**
-     * ID of the GPG certificate to sign commits.
-     *
-     * @var string|null
-     */
-    protected $signCommitUser;
+    /** ID of the GPG certificate to sign commits. */
+    private ?string $signCommitUser = null;
 
-    /**
-     * ID of the GPG certificate to sign tags.
-     *
-     * @var string|null
-     */
-    protected $signTagUser;
+    /** ID of the GPG certificate to sign tags. */
+    private ?string $signTagUser = null;
 
-    /**
-     * Logger facility.
-     *
-     * @var LoggerInterface
-     */
-    protected $logger;
+    private LoggerInterface $logger;
 
-    /**
-     * Create new git config.
-     */
     public function __construct()
     {
         $this->logger = new NullLogger();
     }
 
-    /**
-     * Set the git executable path.
-     *
-     * @param string $gitExecutablePath Path to the git executable.
-     *
-     * @return GitConfig
-     */
-    public function setGitExecutablePath($gitExecutablePath)
+    public function setGitExecutablePath(string $gitExecutablePath): GitConfig
     {
         $this->gitExecutablePath = (string) $gitExecutablePath;
+
         return $this;
     }
 
-    /**
-     * Return the git executable path.
-     *
-     * @return string
-     */
-    public function getGitExecutablePath()
+    public function getGitExecutablePath(): string
     {
         return $this->gitExecutablePath;
     }
 
-    /**
-     * Enable signing of commits.
-     *
-     * @param string $signUser The id of the GPG certificate.
-     *
-     * @return GitConfig
-     */
-    public function enableSignCommits($signUser)
+    public function enableSignCommits(string $signUser): GitConfig
     {
         $this->signCommitUser = (string) $signUser;
+
         return $this;
     }
 
-    /**
-     * Disable signing of commits.
-     *
-     * @return $this
-     */
-    public function disableSignCommits()
+    public function disableSignCommits(): GitConfig
     {
         $this->signCommitUser = null;
+
         return $this;
     }
 
-    /**
-     * Determine if signing commits is enabled.
-     *
-     * @return boolean
-     */
-    public function isSignCommitsEnabled()
+    public function isSignCommitsEnabled(): bool
     {
         return (bool) $this->signCommitUser;
     }
 
     /**
      * Get the id of the GPG certificate to sign commits with.
-     *
-     * @return string|null
      */
-    public function getSignCommitUser()
+    public function getSignCommitUser(): ?string
     {
         return $this->signCommitUser;
     }
 
-    /**
-     * Enable signing of tags.
-     *
-     * @param string $signUser The id of the GPG certificate.
-     *
-     * @return GitConfig
-     */
-    public function enableSignTags($signUser)
+    public function enableSignTags(string $signUser): GitConfig
     {
         $this->signTagUser = (string) $signUser;
+
         return $this;
     }
 
-    /**
-     * Disable signing of tags.
-     *
-     * @return GitConfig
-     */
-    public function disableSignTags()
+    public function disableSignTags(): GitConfig
     {
         $this->signTagUser = null;
+
         return $this;
     }
 
-    /**
-     * Determine if signing tags is enabled.
-     *
-     * @return boolean
-     */
-    public function isSignTagsEnabled()
+    public function isSignTagsEnabled(): bool
     {
         return (bool) $this->signTagUser;
     }
 
     /**
      * Get the id of the GPG certificate to sign tags with.
-     *
-     * @return string|null
      */
-    public function getSignTagUser()
+    public function getSignTagUser(): ?string
     {
         return $this->signTagUser;
     }
 
-    /**
-     * Set the logger facility.
-     *
-     * @param LoggerInterface $logger The logger to use.
-     *
-     * @return GitConfig
-     */
-    public function setLogger(LoggerInterface $logger)
+    public function setLogger(LoggerInterface $logger): GitConfig
     {
         $this->logger = $logger;
+
         return $this;
     }
 
-    /**
-     * Return the logger facility.
-     *
-     * @return LoggerInterface
-     */
-    public function getLogger()
+    public function getLogger(): LoggerInterface
     {
         return $this->logger;
     }

@@ -1,27 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 /**
- * This file is part of bit3/git-php.
+ * Contains the GIT repository adapter class
  *
- * (c) Tristan Lins <tristan@lins.io>
+ * @copyright   Copyright (c) 2014-2020 Tristan Lins
+ * @author      Tristan Lins
+ * @author      Christian Schiffler
+ * @author      David Molineus
+ * @author      Aaron Rubin
+ * @author      Matthew Gamble
+ * @author      Ahmad Marzouq
+ * @author      Sven Baumann
+ * @author      Attila Fulop
+ * @license     MIT
+ * @since       2014-03-16
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- *
- * This project is provided in good faith and hope to be usable by anyone.
- *
- * @package    bit3/git-php
- * @author     Tristan Lins <tristan@lins.io>
- * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
- * @author     David Molineus <mail@netzmacht.de>
- * @author     Aaron Rubin <aaron@arkitech.net>
- * @author     Matthew Gamble <git@matthewgamble.net>
- * @author     Ahmad Marzouq <ahmad.marzouq@eagles-web.com>
- * @author     Sven Baumann <baumann.sv@gmail.com>
- * @copyright  2014-2018 Tristan Lins <tristan@lins.io>
- * @license    https://github.com/bit3/git-php/blob/master/LICENSE MIT
- * @link       https://github.com/bit3/git-php
- * @filesource
  */
 
 namespace Konekt\GitPhp;
@@ -50,298 +45,146 @@ use Konekt\GitPhp\Command\StashCommandBuilder;
 use Konekt\GitPhp\Command\StatusCommandBuilder;
 use Konekt\GitPhp\Command\TagCommandBuilder;
 
-/**
- * GIT repository adapter.
- *
- * @SuppressWarnings(PHPMD.TooManyPublicMethods)
- */
 class GitRepository
 {
-    /**
-     * The path to the git repository.
-     *
-     * @var string
-     */
-    public $repositoryPath;
+    /** The path to the git repository */
+    public string $repositoryPath;
 
-    /**
-     * The shared git configuration.
-     *
-     * @var GitConfig
-     */
-    public $config;
+    /** The shared git configuration */
+    public GitConfig $config;
 
-    /**
-     * Create a new git repository.
-     *
-     * @param string    $repositoryPath The path to the git repository.
-     *
-     * @param GitConfig $config         The configuration to use.
-     */
-    public function __construct($repositoryPath, GitConfig $config = null)
+    public function __construct(?string $repositoryPath, GitConfig $config = null)
     {
         $this->repositoryPath = (string) $repositoryPath;
-        $this->config         = $config ?: new GitConfig();
+        $this->config         = null === $config ? new GitConfig() : $config;
     }
 
-    /**
-     * Return the path to the git repository.
-     *
-     * @return string
-     */
-    public function getRepositoryPath()
+    public function getRepositoryPath(): string
     {
         return $this->repositoryPath;
     }
 
-    /**
-     * Return the shared git config.
-     *
-     * @return GitConfig
-     */
-    public function getConfig()
+    public function getConfig(): GitConfig
     {
         return $this->config;
     }
 
-    /**
-     * Determine if git is already initialized in the repository path.
-     *
-     * @return bool
-     */
-    public function isInitialized()
+    public function isInitialized(): bool
     {
         return \is_dir($this->repositoryPath . DIRECTORY_SEPARATOR . '.git');
     }
 
-    /**
-     * Create an init command.
-     *
-     * @return InitCommandBuilder
-     */
-    public function init()
+    public function init(): InitCommandBuilder
     {
         return new InitCommandBuilder($this);
     }
 
-    /**
-     * Create a clone command.
-     *
-     * @return CloneCommandBuilder
-     */
-    public function cloneRepository()
+    public function cloneRepository(): CloneCommandBuilder
     {
         return new CloneCommandBuilder($this);
     }
 
-    /**
-     * Create a config command.
-     *
-     * @return ConfigCommandBuilder
-     */
-    public function config()
+    public function config(): ConfigCommandBuilder
     {
         return new ConfigCommandBuilder($this);
     }
 
-    /**
-     * Create a remote command.
-     *
-     * @return RemoteCommandBuilder
-     */
-    public function remote()
+    public function remote(): RemoteCommandBuilder
     {
         return new RemoteCommandBuilder($this);
     }
 
-    /**
-     * Create a branch command.
-     *
-     * @return BranchCommandBuilder
-     */
-    public function branch()
+    public function branch(): BranchCommandBuilder
     {
         return new BranchCommandBuilder($this);
     }
 
-    /**
-     * Create a rev-parse command.
-     *
-     * @return RevParseCommandBuilder
-     */
-    public function revParse()
+    public function revParse(): RevParseCommandBuilder
     {
         return new RevParseCommandBuilder($this);
     }
 
-    /**
-     * Create describe command.
-     *
-     * @return DescribeCommandBuilder
-     */
-    public function describe()
+    public function describe(): DescribeCommandBuilder
     {
         return new DescribeCommandBuilder($this);
     }
 
-    /**
-     * Create reset command.
-     *
-     * @return ResetCommandBuilder
-     */
-    public function reset()
+    public function reset(): ResetCommandBuilder
     {
         return new ResetCommandBuilder($this);
     }
 
-    /**
-     * Create checkout command.
-     *
-     * @return CheckoutCommandBuilder
-     */
-    public function checkout()
+    public function checkout(): CheckoutCommandBuilder
     {
         return new CheckoutCommandBuilder($this);
     }
 
-    /**
-     * Create push command.
-     *
-     * @return PushCommandBuilder
-     */
-    public function push()
+    public function push(): PushCommandBuilder
     {
         return new PushCommandBuilder($this);
     }
 
-    /**
-     * Create fetch command.
-     *
-     * @return FetchCommandBuilder
-     */
-    public function fetch()
+    public function fetch(): FetchCommandBuilder
     {
         return new FetchCommandBuilder($this);
     }
 
-    /**
-     * Create status command.
-     *
-     * @return StatusCommandBuilder
-     */
-    public function status()
+    public function status(): StatusCommandBuilder
     {
         return new StatusCommandBuilder($this);
     }
 
-    /**
-     * Create add command.
-     *
-     * @return AddCommandBuilder
-     */
-    public function add()
+    public function add(): AddCommandBuilder
     {
         return new AddCommandBuilder($this);
     }
 
-    /**
-     * Create rm command.
-     *
-     * @return RmCommandBuilder
-     *
-     * @SuppressWarnings(PHPMD.ShortMethodName)
-     */
-    public function rm()
+    public function rm(): RmCommandBuilder
     {
         return new RmCommandBuilder($this);
     }
 
-    /**
-     * Create commit command.
-     *
-     * @return CommitCommandBuilder
-     */
-    public function commit()
+    public function commit(): CommitCommandBuilder
     {
         return new CommitCommandBuilder($this);
     }
 
-    /**
-     * Create tag command.
-     *
-     * @return TagCommandBuilder
-     */
-    public function tag()
+    public function tag(): TagCommandBuilder
     {
         return new TagCommandBuilder($this);
     }
 
-    /**
-     * Create show command.
-     *
-     * @return ShowCommandBuilder
-     */
-    public function show()
+    public function show(): ShowCommandBuilder
     {
         return new ShowCommandBuilder($this);
     }
 
-    /**
-     * Create log command.
-     *
-     * @return LogCommandBuilder
-     */
-    public function log()
+    public function log(): LogCommandBuilder
     {
         return new LogCommandBuilder($this);
     }
 
-    /**
-     * Create shortlog command.
-     *
-     * @return ShortLogCommandBuilder
-     */
-    public function shortlog()
+    public function shortLog(): ShortLogCommandBuilder
     {
         return new ShortLogCommandBuilder($this);
     }
 
-    /**
-     * Create ls-remote command.
-     *
-     * @return LsRemoteCommandBuilder
-     */
-    public function lsRemote()
+    public function lsRemote(): LsRemoteCommandBuilder
     {
         return new LsRemoteCommandBuilder($this);
     }
 
-    /**
-     * Create Merge command.
-     *
-     * @return MergeCommandBuilder
-     */
-    public function merge()
+    public function merge(): MergeCommandBuilder
     {
         return new MergeCommandBuilder($this);
     }
 
-    /**
-     * Create Pull command.
-     *
-     * @return PullCommandBuilder
-     */
-    public function pull()
+    public function pull(): PullCommandBuilder
     {
         return new PullCommandBuilder($this);
     }
 
-    /**
-     * Create stash command.
-     *
-     * @return StashCommandBuilder
-     */
-    public function stash()
+    public function stash(): StashCommandBuilder
     {
         return new StashCommandBuilder($this);
     }

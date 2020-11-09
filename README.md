@@ -6,7 +6,7 @@
 [![StyleCI](https://styleci.io/repos/311014751/shield?branch=master)](https://styleci.io/repos/311014751)
 [![MIT Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.md)
 
-> This is a fork of the original [bit3/git-php](https://github.com/bit3/git-php) repository
+> This is a fork of the original [bit3/git-php](https://github.com/bit3/git-php) repository at version 1.5.0
 
 ## GIT Wrapper for PHP
 
