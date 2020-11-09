@@ -114,7 +114,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::init
-     * @covers \Konekt\GitPhp\Command\InitCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\InitCommandBuilder::execute
      */
     public function testInit()
     {
@@ -127,8 +127,8 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::config
-     * @covers \Konekt\GitPhp\Command\ConfigCommandBuilder::execute
-     * @covers \Konekt\GitPhp\Command\ConfigCommandBuilder::get
+     * @covers \Konekt\GitPhp\Commands\ConfigCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\ConfigCommandBuilder::get
      */
     public function testConfigGetOnInitializedRepository()
     {
@@ -144,7 +144,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::config
-     * @covers \Konekt\GitPhp\Command\ConfigCommandBuilder
+     * @covers \Konekt\GitPhp\Commands\ConfigCommandBuilder
      */
     public function testConfigGetOnUnitializedRepository()
     {
@@ -218,7 +218,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::remote
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::getNames
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::getNames
      */
     public function testListRemotesOnInitializedRepository()
     {
@@ -230,7 +230,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::remote
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::getNames
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::getNames
      */
     public function testListRemotesOnUninitializedRepository()
     {
@@ -245,8 +245,8 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::branch
-     * @covers \Konekt\GitPhp\Command\BranchCommandBuilder::all
-     * @covers \Konekt\GitPhp\Command\BranchCommandBuilder::getNames
+     * @covers \Konekt\GitPhp\Commands\BranchCommandBuilder::all
+     * @covers \Konekt\GitPhp\Commands\BranchCommandBuilder::getNames
      */
     public function testListBranchesOnInitializedRepository()
     {
@@ -262,7 +262,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::branch
-     * @covers \Konekt\GitPhp\Command\BranchCommandBuilder::getNames
+     * @covers \Konekt\GitPhp\Commands\BranchCommandBuilder::getNames
      */
     public function testListBranchesOnUninitializedRepository()
     {
@@ -277,9 +277,9 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::describe
-     * @covers \Konekt\GitPhp\Command\DescribeCommandBuilder::tags
-     * @covers \Konekt\GitPhp\Command\DescribeCommandBuilder::all
-     * @covers \Konekt\GitPhp\Command\DescribeCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\DescribeCommandBuilder::tags
+     * @covers \Konekt\GitPhp\Commands\DescribeCommandBuilder::all
+     * @covers \Konekt\GitPhp\Commands\DescribeCommandBuilder::execute
      */
     public function testDescribeOnInitializedRepository()
     {
@@ -299,7 +299,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::describe
-     * @covers \Konekt\GitPhp\Command\DescribeCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\DescribeCommandBuilder::execute
      */
     public function testDescribeOnUninitializedRepository()
     {
@@ -314,8 +314,8 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::remote
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::setUrl
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::setUrl
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::execute
      */
     public function testRemoteSetUrlOnInitializedRepository()
     {
@@ -332,8 +332,8 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::remote
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::setUrl
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::setUrl
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::execute
      */
     public function testRemoteSetUrlOnUninitializedRepository()
     {
@@ -348,8 +348,8 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::remote
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::setPushUrl
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::setPushUrl
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::execute
      */
     public function testRemoteSetPushUrlOnInitializedRepository()
     {
@@ -374,8 +374,8 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::remote
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::setPushUrl
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::setPushUrl
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::execute
      */
     public function testRemoteSetPushUrlOnUninitializedRepository()
     {
@@ -390,8 +390,8 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::remote
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::add
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::add
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::execute
      */
     public function testRemoteAddOnInitializedRepository()
     {
@@ -408,8 +408,8 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::remote
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::add
-     * @covers \Konekt\GitPhp\Command\RemoteCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::add
+     * @covers \Konekt\GitPhp\Commands\RemoteCommandBuilder::execute
      */
     public function testRemoteAddOnUninitializedRepository()
     {
@@ -424,7 +424,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::fetch
-     * @covers \Konekt\GitPhp\Command\FetchCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\FetchCommandBuilder::execute
      */
     public function testRemoteFetchOnInitializedRepository()
     {
@@ -451,7 +451,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::fetch
-     * @covers \Konekt\GitPhp\Command\FetchCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\FetchCommandBuilder::execute
      */
     public function testRemoteFetchOnUninitializedRepository()
     {
@@ -466,7 +466,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::checkout
-     * @covers \Konekt\GitPhp\Command\CheckoutCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\CheckoutCommandBuilder::execute
      */
     public function testCheckoutOnInitializedRepository()
     {
@@ -490,7 +490,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::checkout
-     * @covers \Konekt\GitPhp\Command\CheckoutCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\CheckoutCommandBuilder::execute
      */
     public function testCheckoutOnUninitializedRepository()
     {
@@ -510,7 +510,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::push
-     * @covers \Konekt\GitPhp\Command\PushCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\PushCommandBuilder::execute
      */
     public function testPushOnUninitializedRepository()
     {
@@ -525,7 +525,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::status
-     * @covers \Konekt\GitPhp\Command\StatusCommandBuilder::getStatus
+     * @covers \Konekt\GitPhp\Commands\StatusCommandBuilder::getStatus
      */
     public function testStatusOnInitializedRepository()
     {
@@ -542,7 +542,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::status
-     * @covers \Konekt\GitPhp\Command\StatusCommandBuilder::getStatus
+     * @covers \Konekt\GitPhp\Commands\StatusCommandBuilder::getStatus
      */
     public function testStatusOnUninitializedRepository()
     {
@@ -557,7 +557,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::add
-     * @covers \Konekt\GitPhp\Command\AddCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\AddCommandBuilder::execute
      */
     public function testAddOnInitializedRepository()
     {
@@ -576,7 +576,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::add
-     * @covers \Konekt\GitPhp\Command\AddCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\AddCommandBuilder::execute
      */
     public function testAddOnUninitializedRepository()
     {
@@ -591,7 +591,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::rm
-     * @covers \Konekt\GitPhp\Command\RmCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\RmCommandBuilder::execute
      */
     public function testRmOnInitializedRepository()
     {
@@ -610,7 +610,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::rm
-     * @covers \Konekt\GitPhp\Command\RmCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\RmCommandBuilder::execute
      */
     public function testRmOnUninitializedRepository()
     {
@@ -625,8 +625,8 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::commit
-     * @covers \Konekt\GitPhp\Command\CommitCommandBuilder::message
-     * @covers \Konekt\GitPhp\Command\CommitCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\CommitCommandBuilder::message
+     * @covers \Konekt\GitPhp\Commands\CommitCommandBuilder::execute
      */
     public function testCommitOnInitializedRepository()
     {
@@ -651,8 +651,8 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::commit
-     * @covers \Konekt\GitPhp\Command\CommitCommandBuilder::message
-     * @covers \Konekt\GitPhp\Command\CommitCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\CommitCommandBuilder::message
+     * @covers \Konekt\GitPhp\Commands\CommitCommandBuilder::execute
      */
     public function testCommitOnUninitializedRepository()
     {
@@ -667,7 +667,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::tag
-     * @covers \Konekt\GitPhp\Command\TagCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\TagCommandBuilder::execute
      */
     public function testTagOnInitializedRepository()
     {
@@ -687,7 +687,7 @@ class GitRepositoryTest extends TestCase
 
     /**
      * @covers \Konekt\GitPhp\GitRepository::tag
-     * @covers \Konekt\GitPhp\Command\TagCommandBuilder::execute
+     * @covers \Konekt\GitPhp\Commands\TagCommandBuilder::execute
      */
     public function testTagOnUninitializedRepository()
     {

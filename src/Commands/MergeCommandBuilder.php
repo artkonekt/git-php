@@ -20,21 +20,22 @@
  * @filesource
  */
 
-namespace Konekt\GitPhp\Command;
+namespace Konekt\GitPhp\Commands;
 
 use Konekt\GitPhp\Concerns\BuildsCommand;
+use Konekt\GitPhp\Contracts\CommandBuilder;
 
 /**
  * Merge command builder.
  */
-class MergeCommandBuilder implements CommandBuilderInterface
+class MergeCommandBuilder implements CommandBuilder
 {
     use BuildsCommand;
 
     /**
      * {@inheritDoc}
      */
-    protected function initializeProcessBuilder()
+     protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'merge';
     }

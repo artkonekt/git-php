@@ -20,16 +20,17 @@
  * @filesource
  */
 
-namespace Konekt\GitPhp\Command;
+namespace Konekt\GitPhp\Commands;
 
 use Konekt\GitPhp\Concerns\BuildsCommand;
+use Konekt\GitPhp\Contracts\CommandBuilder;
 
 /**
  * Push command builder.
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class PushCommandBuilder implements CommandBuilderInterface
+class PushCommandBuilder implements CommandBuilder
 {
     use BuildsCommand;
 
@@ -40,7 +41,7 @@ class PushCommandBuilder implements CommandBuilderInterface
     /**
      * {@inheritDoc}
      */
-    protected function initializeProcessBuilder()
+     protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'push';
     }

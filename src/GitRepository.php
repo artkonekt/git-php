@@ -21,29 +21,29 @@ declare(strict_types=1);
 
 namespace Konekt\GitPhp;
 
-use Konekt\GitPhp\Command\AddCommandBuilder;
-use Konekt\GitPhp\Command\BranchCommandBuilder;
-use Konekt\GitPhp\Command\CheckoutCommandBuilder;
-use Konekt\GitPhp\Command\CloneCommandBuilder;
-use Konekt\GitPhp\Command\CommitCommandBuilder;
-use Konekt\GitPhp\Command\ConfigCommandBuilder;
-use Konekt\GitPhp\Command\DescribeCommandBuilder;
-use Konekt\GitPhp\Command\FetchCommandBuilder;
-use Konekt\GitPhp\Command\InitCommandBuilder;
-use Konekt\GitPhp\Command\LogCommandBuilder;
-use Konekt\GitPhp\Command\LsRemoteCommandBuilder;
-use Konekt\GitPhp\Command\MergeCommandBuilder;
-use Konekt\GitPhp\Command\PullCommandBuilder;
-use Konekt\GitPhp\Command\PushCommandBuilder;
-use Konekt\GitPhp\Command\RemoteCommandBuilder;
-use Konekt\GitPhp\Command\ResetCommandBuilder;
-use Konekt\GitPhp\Command\RevParseCommandBuilder;
-use Konekt\GitPhp\Command\RmCommandBuilder;
-use Konekt\GitPhp\Command\ShortLogCommandBuilder;
-use Konekt\GitPhp\Command\ShowCommandBuilder;
-use Konekt\GitPhp\Command\StashCommandBuilder;
-use Konekt\GitPhp\Command\StatusCommandBuilder;
-use Konekt\GitPhp\Command\TagCommandBuilder;
+use Konekt\GitPhp\Commands\AddCommandBuilder;
+use Konekt\GitPhp\Commands\BranchCommandBuilder;
+use Konekt\GitPhp\Commands\CheckoutCommandBuilder;
+use Konekt\GitPhp\Commands\CloneCommandBuilder;
+use Konekt\GitPhp\Commands\CommitCommandBuilder;
+use Konekt\GitPhp\Commands\ConfigCommandBuilder;
+use Konekt\GitPhp\Commands\DescribeCommandBuilder;
+use Konekt\GitPhp\Commands\FetchCommandBuilder;
+use Konekt\GitPhp\Commands\InitCommandBuilder;
+use Konekt\GitPhp\Commands\LogCommandBuilder;
+use Konekt\GitPhp\Commands\LsRemoteCommandBuilder;
+use Konekt\GitPhp\Commands\MergeCommandBuilder;
+use Konekt\GitPhp\Commands\PullCommandBuilder;
+use Konekt\GitPhp\Commands\PushCommandBuilder;
+use Konekt\GitPhp\Commands\RemoteCommandBuilder;
+use Konekt\GitPhp\Commands\ResetCommandBuilder;
+use Konekt\GitPhp\Commands\RevParseCommandBuilder;
+use Konekt\GitPhp\Commands\RmCommandBuilder;
+use Konekt\GitPhp\Commands\ShortLogCommandBuilder;
+use Konekt\GitPhp\Commands\ShowCommandBuilder;
+use Konekt\GitPhp\Commands\StashCommandBuilder;
+use Konekt\GitPhp\Commands\StatusCommandBuilder;
+use Konekt\GitPhp\Commands\TagCommandBuilder;
 
 class GitRepository
 {

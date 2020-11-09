@@ -20,7 +20,7 @@
  * @filesource
  */
 
-namespace Konekt\GitPhp\Command;
+namespace Konekt\GitPhp\Commands;
 
 use Konekt\GitPhp\Concerns\BuildsCommand;
 
@@ -32,7 +32,7 @@ use Konekt\GitPhp\Concerns\BuildsCommand;
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class LogCommandBuilder implements CommandBuilderInterface
+class LogCommandBuilder implements CommandBuilder
 {
     use BuildsCommand;
 
@@ -63,7 +63,7 @@ class LogCommandBuilder implements CommandBuilderInterface
     /**
      * {@inheritDoc}
      */
-    protected function initializeProcessBuilder()
+     protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'log';
     }

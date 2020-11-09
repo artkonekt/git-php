@@ -20,16 +20,17 @@
  * @filesource
  */
 
-namespace Konekt\GitPhp\Command;
+namespace Konekt\GitPhp\Commands;
 
 use Konekt\GitPhp\Concerns\BuildsCommand;
+use Konekt\GitPhp\Contracts\CommandBuilder;
 
 /**
  * Tag command builder.
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class TagCommandBuilder implements CommandBuilderInterface
+class TagCommandBuilder implements CommandBuilder
 {
     use BuildsCommand;
 
@@ -56,7 +57,7 @@ class TagCommandBuilder implements CommandBuilderInterface
     /**
      * {@inheritDoc}
      */
-    protected function initializeProcessBuilder()
+     protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'tag';
     }

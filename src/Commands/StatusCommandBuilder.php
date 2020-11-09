@@ -20,16 +20,17 @@
  * @filesource
  */
 
-namespace Konekt\GitPhp\Command;
+namespace Konekt\GitPhp\Commands;
 
 use Konekt\GitPhp\Concerns\BuildsCommand;
+use Konekt\GitPhp\Contracts\CommandBuilder;
 
 /**
  * Status command builder.
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class StatusCommandBuilder implements CommandBuilderInterface
+class StatusCommandBuilder implements CommandBuilder
 {
     use BuildsCommand;
 
@@ -50,7 +51,7 @@ class StatusCommandBuilder implements CommandBuilderInterface
     /**
      * {@inheritDoc}
      */
-    protected function initializeProcessBuilder()
+     protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'status';
     }

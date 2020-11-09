@@ -21,16 +21,17 @@
  * @filesource
  */
 
-namespace Konekt\GitPhp\Command;
+namespace Konekt\GitPhp\Commands;
 
 use Konekt\GitPhp\Concerns\BuildsCommand;
+use Konekt\GitPhp\Contracts\CommandBuilder;
 
 /**
  * Rev-parse command builder.
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class RevParseCommandBuilder implements CommandBuilderInterface
+class RevParseCommandBuilder implements CommandBuilder
 {
     use BuildsCommand;
 
@@ -41,7 +42,7 @@ class RevParseCommandBuilder implements CommandBuilderInterface
     /**
      * {@inheritDoc}
      */
-    protected function initializeProcessBuilder()
+     protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'rev-parse';
     }

@@ -20,14 +20,15 @@
  * @filesource
  */
 
-namespace Konekt\GitPhp\Command;
+namespace Konekt\GitPhp\Commands;
 
 use Konekt\GitPhp\Concerns\BuildsCommand;
+use Konekt\GitPhp\Contracts\CommandBuilder;
 
 /**
  * Init command builder.
  */
-class InitCommandBuilder implements CommandBuilderInterface
+class InitCommandBuilder implements CommandBuilder
 {
     use BuildsCommand;
 
@@ -48,7 +49,7 @@ class InitCommandBuilder implements CommandBuilderInterface
     /**
      * {@inheritDoc}
      */
-    protected function initializeProcessBuilder()
+     protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'init';
     }

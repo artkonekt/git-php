@@ -20,23 +20,24 @@
  * @filesource
  */
 
-namespace Konekt\GitPhp\Command;
+namespace Konekt\GitPhp\Commands;
 
 use Konekt\GitPhp\Concerns\BuildsCommand;
+use Konekt\GitPhp\Contracts\CommandBuilder;
 
 /**
  * Add command builder.
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class AddCommandBuilder implements CommandBuilderInterface
+class AddCommandBuilder implements CommandBuilder
 {
     use BuildsCommand;
 
     /**
      * {@inheritDoc}
      */
-    protected function initializeProcessBuilder()
+     protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'add';
     }
