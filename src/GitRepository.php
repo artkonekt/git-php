@@ -53,6 +53,18 @@ class GitRepository
     /** The shared git configuration */
     public GitConfig $config;
 
+    public static function in(string $repositoryPath): self
+    {
+        return new self($repositoryPath);
+    }
+
+    public function usingConfig(GitConfig $config): self
+    {
+        $this->config = $config;
+
+        return $this;
+    }
+
     public function __construct(?string $repositoryPath, GitConfig $config = null)
     {
         $this->repositoryPath = (string) $repositoryPath;

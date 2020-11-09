@@ -31,12 +31,7 @@ or option, just look into the git documentation. You will find the command/optio
 #### init a new git repository
 
 ```php
-use Konekt\GitPhp\GitRepository;
-
-$directory = '/path/to/git/target/directory';
-
-$git = new GitRepository($directory);
-$git->init()->execute();
+GitRepository::in('/path/to/git/target/directory')->init()->execute();
 ```
 
 #### clone a git repository
@@ -44,11 +39,7 @@ $git->init()->execute();
 The `clone` command is named `cloneRepository()` because `clone` is a reserved word in PHP.
 
 ```php
-use Konekt\GitPhp\GitRepository;
-
-$directory = '/path/to/git/target/directory';
-
-$git = new GitRepository($directory);
+$git = GitRepository::in('/path/to/repo');
 $git->cloneRepository()->execute();
 ```
 
@@ -159,7 +150,7 @@ $remotes = $git->branch()->getNames();
 #### list remote tracking branches
 
 ```php
-$remotes = $git->branch()->remotes()->->getNames();
+$remotes = $git->branch()->remotes()->getNames();
 
 // array(
 //     'origin/master',
@@ -171,7 +162,7 @@ $remotes = $git->branch()->remotes()->->getNames();
 #### list branches including remote tracking branches
 
 ```php
-$remotes = $git->branch()->all()->->getNames();
+$remotes = $git->branch()->all()->getNames();
 
 // array(
 //     'master',
