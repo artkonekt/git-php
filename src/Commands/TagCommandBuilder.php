@@ -57,7 +57,7 @@ class TagCommandBuilder implements CommandBuilder
     /**
      * {@inheritDoc}
      */
-     protected function initializeProcessBuilder(): void
+    protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'tag';
     }

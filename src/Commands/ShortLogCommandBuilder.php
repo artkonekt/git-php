@@ -35,7 +35,7 @@ class ShortLogCommandBuilder implements CommandBuilder
     /**
      * {@inheritDoc}
      */
-     protected function initializeProcessBuilder(): void
+    protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'shortlog';
     }

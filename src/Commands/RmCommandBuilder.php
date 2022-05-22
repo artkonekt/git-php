@@ -35,7 +35,7 @@ class RmCommandBuilder implements CommandBuilder
     /**
      * {@inheritDoc}
      */
-     protected function initializeProcessBuilder(): void
+    protected function initializeProcessBuilder(): void
     {
         $this->arguments[] = 'rm';
     }
