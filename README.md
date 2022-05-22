@@ -1,12 +1,12 @@
 # Run Git Commands from PHP
 
-[![Travis Build Status](https://img.shields.io/travis/artkonekt/git-php.svg?style=flat-square)](https://travis-ci.com/artkonekt/git-php)
+[![Tests](https://img.shields.io/github/workflow/status/artkonekt/git-php/tests/master?style=flat-square)](https://github.com/artkonekt/git-php/actions?query=workflow%3Atests)
 [![Packagist Stable Version](https://img.shields.io/packagist/v/konekt/git-php.svg?style=flat-square&label=stable)](https://packagist.org/packages/konekt/git-php)
 [![Packagist downloads](https://img.shields.io/packagist/dt/konekt/git-php.svg?style=flat-square)](https://packagist.org/packages/konekt/git-php)
 [![StyleCI](https://styleci.io/repos/311014751/shield?branch=master)](https://styleci.io/repos/311014751)
 [![MIT Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE.md)
 
-> This is a fork of the original [bit3/git-php](https://github.com/bit3/git-php) repository at version 1.5.0
+> This repository was forked from [bit3/git-php](https://github.com/bit3/git-php) at its version 1.5.0.
 
 ## GIT Wrapper for PHP
 
