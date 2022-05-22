@@ -39,8 +39,7 @@ class GitException extends \RuntimeException
         ?string $commandLine,
         ?string $commandOutput,
         ?string $errorOutput
-    )
-    {
+    ) {
         parent::__construct($message, 0, null);
 
         $this->workingDirectory = (string) $workingDirectory;
