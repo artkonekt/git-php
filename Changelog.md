@@ -1,9 +1,10 @@
 # Git PHP Changelog
 
-## Unreleased
-#### 2023-XX-YY
+## 2.1.0
+#### 2023-05-27
 
 - Added PSR log v2 and v3 support
+- Added testing with PHP 8.2 - works
 
 ## 2.0.0
 #### 2022-05-22
