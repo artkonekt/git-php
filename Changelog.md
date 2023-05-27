@@ -1,5 +1,10 @@
 # Git PHP Changelog
 
+## Unreleased
+#### 2023-XX-YY
+
+- Fixed a missing use clause in the LogCommandBuilder class
+
 ## 2.1.0
 #### 2023-05-27
 
