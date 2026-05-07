@@ -1,5 +1,10 @@
 # Git PHP Changelog
 
+## Unreleased
+#### 2026-XX-YY
+
+- Added Symfony 7 support
+
 ## 2.1.1
 #### 2023-05-27
 
