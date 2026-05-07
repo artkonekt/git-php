@@ -1,7 +1,7 @@
 # Git PHP Changelog
 
-## Unreleased
-#### 2026-XX-YY
+## 2.2.0
+#### 2026-05-07
 
 - Added Symfony 7 support
 - Dropped PHP 7.4, 8.0 and 8.1 support
