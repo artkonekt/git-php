@@ -1,6 +1,6 @@
 # Run Git Commands from PHP
 
-[![Tests](https://img.shields.io/github/workflow/status/artkonekt/git-php/tests/master?style=flat-square)](https://github.com/artkonekt/git-php/actions?query=workflow%3Atests)
+[![Tests](https://img.shields.io/github/actions/workflow/status/artkonekt/git-php/tests.yml?branch=master&style=flat-square)](https://github.com/artkonekt/git-php/actions?query=workflow%3Atests)
 [![Packagist Stable Version](https://img.shields.io/packagist/v/konekt/git-php.svg?style=flat-square&label=stable)](https://packagist.org/packages/konekt/git-php)
 [![Packagist downloads](https://img.shields.io/packagist/dt/konekt/git-php.svg?style=flat-square)](https://packagist.org/packages/konekt/git-php)
 [![StyleCI](https://styleci.io/repos/311014751/shield?branch=master)](https://styleci.io/repos/311014751)
