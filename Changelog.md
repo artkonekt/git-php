@@ -4,6 +4,8 @@
 #### 2026-XX-YY
 
 - Added Symfony 7 support
+- Dropped PHP 7.4, 8.0 and 8.1 support
+- Dropped Symfony 4 & 5 support
 
 ## 2.1.1
 #### 2023-05-27
